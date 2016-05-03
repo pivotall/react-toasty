@@ -1,0 +1,81 @@
+$toasty-zindex:  9999 !default;
+$toasty-success: #2ecc71 !default;
+$toasty-info:    #2e7ccc !default;
+$toasty-warning: #e67e22 !default;
+$toasty-danger:  #e74c3c !default;
+
+.toasty-er {
+    position: fixed;
+    z-index: $toasty-zindex;
+
+    // different mounting areas
+    &[toasty-mounting="top-right"] {
+        top: 12px;
+        right: 12px;
+        .toasty { transform: translateX(100%); }
+    }
+    &[toasty-mounting="top-left"] {
+        top: 12px;
+        left: 12px;
+        .toasty { transform: translateX(-100%); }
+    }
+    &[toasty-mounting="bottom-right"] {
+        bottom: 12px;
+        right: 12px;
+        .toasty { transform: translateX(100%); }
+    }
+    &[toasty-mounting="bottom-left"] {
+        bottom: 12px;
+        left: 12px;
+        .toasty { transform: translateX(-100%); }
+    }
+    &[toasty-mounting] {
+        .toasty.active { transform: translateX(0); }
+    }
+}
+    .toasty {
+        position: relative;
+        width: 275px;
+        margin: 0 0 20px 0;
+        padding: 10px 20px 10px 25px;
+        border-radius: 2px;
+        overflow: hidden;
+        cursor: pointer;
+        background: #fff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+
+        transition: opacity 500ms ease,
+            transform 300ms ease;
+
+        will-change: opacity, transform;
+
+        &:before {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 3px;
+            border-radius: 2px 0 0 2px;
+            background: #ccc;
+        }
+
+        &[toasty-type="success"] { &:before { background: $toasty-success; } }
+        &[toasty-type="danger"] { &:before { background: $toasty-danger; } }
+        &[toasty-type="info"] { &:before { background: $toasty-info; } }
+        &[toasty-type="warning"] { &:before { background: $toasty-warning; } }
+
+        &.fade { opacity: 0.6; }
+    }
+        .toasty-title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-weight: 600;
+        }
+        .toasty-message {
+            font-size: 0.8rem;
+        }
+
+

@@ -1,0 +1,30 @@
+{
+  "name": "react-toasty",
+  "version": "0.0.4",
+  "description": "a react toast notification system",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Joseph Clay",
+  "license": "MIT",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/pivotall/react-toasty/issues"
+  },
+  "homepage": "https://github.com/pivotall/react-toasty#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pivotall/react-toasty.git"
+  },
+  "dependencies": {
+    "classnames": "^2.2.3",
+    "react": "^15.0.1"
+  },
+  "devDependencies": {
+  }
+}
